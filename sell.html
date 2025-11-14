@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell Item | LNMIIT Exchange</title>
   <link rel="icon" href="https://pbs.twimg.com/profile_images/436987343/upper_logo_400x400.JPG">
+
   <style>
     * {
       margin: 0;
@@ -19,7 +20,7 @@
     }
 
     header {
-      background-color: #002147; /* LNMIIT Blue */
+      background-color: #002147;
       color: white;
       padding: 20px 50px;
       display: flex;
@@ -42,7 +43,7 @@
     }
 
     nav a:hover {
-      color: #F57C00; /* LNMIIT Orange */
+      color: #F57C00;
     }
 
     .sell-section {
@@ -105,6 +106,14 @@
       background-color: #002147;
     }
 
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      color: green;
+      font-weight: 600;
+    }
+
     footer {
       background-color: #002147;
       color: white;
@@ -117,24 +126,17 @@
       color: #F57C00;
       text-decoration: none;
     }
-
-    .success-message {
-      display: none;
-      text-align: center;
-      margin-top: 15px;
-      color: green;
-      font-weight: 600;
-    }
-  </style>  
+  </style>
 </head>
+
 <body>
 
   <header>
     <h1>LNMIIT Exchange</h1>
     <nav>
-      <a href="index.html ">Home</a>
-      <a href="sell.html" >Sell Item</a>
-      <a href="browse.html" >Browse Items</a>
+      <a href="index.html">Home</a>
+      <a href="sell.html">Sell Item</a>
+      <a href="browse.html">Browse Items</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -142,12 +144,14 @@
 
   <section class="sell-section">
     <h2>Sell Your Item</h2>
+
     <form id="sellForm">
+
       <label for="name">Item Name</label>
-      <input type="text" id="name" name="name" placeholder="e.g. Physics Book, Calculator" required>
+      <input type="text" id="name" placeholder="e.g. Physics Book, Calculator" required>
 
       <label for="category">Category</label>
-      <select id="category" name="category" required>
+      <select id="category" required>
         <option value="">-- Select Category --</option>
         <option>Books</option>
         <option>Electronics</option>
@@ -158,39 +162,66 @@
       </select>
 
       <label for="desc">Description</label>
-      <textarea id="desc" name="desc" placeholder="Add some details about the item..." required></textarea>
+      <textarea id="desc" placeholder="Add some details..." required></textarea>
 
       <label for="price">Price (₹)</label>
-      <input type="number" id="price" name="price" placeholder="Enter selling price" required>
+      <input type="number" id="price" placeholder="Enter selling price" required>
 
-      <label for="image">Drop your image file</label>
-      <input type="file" id="image" name="image">
+      <label for="image">Upload Image</label>
+      <input type="file" id="image" accept="image/*" required>
 
       <label for="contact">Your Contact (Email / WhatsApp)</label>
-      <input type="text" id="contact" name="contact" placeholder="e.g. your LNMIIT email or phone number" required>
+      <input type="text" id="contact" placeholder="LNMIIT email or phone number" required>
 
       <button type="submit">Submit Item</button>
       <p class="success-message" id="successMsg">Your item has been listed successfully!</p>
+
     </form>
   </section>
 
   <footer>
-    <p>© 2025 LNMIIT Exchange </p>
-    <!-- <p>Contact: <a href="mailto:rishabhgarg2066@gmail.com">rishabhgarg2066@gmail.com</a></p> -->
+    <p>© 2025 LNMIIT Exchange</p>
   </footer>
 
   <script>
     const form = document.getElementById('sellForm');
     const successMsg = document.getElementById('successMsg');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      successMsg.style.display = 'block';
-      form.reset();
-      setTimeout(() => successMsg.style.display = 'none', 3000);
+
+      const name = document.getElementById("name").value;
+      const category = document.getElementById("category").value;
+      const desc = document.getElementById("desc").value;
+      const price = document.getElementById("price").value;
+      const contact = document.getElementById("contact").value;
+      const imageFile = document.getElementById("image").files[0];
+
+      const reader = new FileReader();
+      reader.onload = function() {
+        const item = {
+          name,
+          category,
+          desc,
+          price,
+          contact,
+          image: reader.result
+        };
+
+        let items = JSON.parse(localStorage.getItem("items")) || [];
+        items.push(item);
+        localStorage.setItem("items", JSON.stringify(items));
+
+        successMsg.style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = "browse.html";
+        }, 1200);
+      };
+
+      reader.readAsDataURL(imageFile);
     });
   </script>
 
 </body>
 </html>
-
