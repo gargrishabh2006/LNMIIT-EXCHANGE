@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | LNMIIT Exchange</title>
+  <link rel="icon" href="https://pbs.twimg.com/profile_images/436987343/upper_logo_400x400.JPG">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f6f8fa;
+      color: #222;
+    }
+
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #F57C00;
+    }
+
+    .contact-section {
+      max-width: 700px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #002147;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #002147;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #F57C00;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #F57C00;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #002147;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+      color: #444;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #F57C00;
+      text-decoration: none;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LNMIIT Exchange</h1>
+    <nav>
+      <a href="index.html" target="_blank">Home</a>
+      <a href="sell.html" target="_blank">Sell Item</a>
+      <a href="browse.html" target="_blank">Browse Items</a>
+      <a href="about.html" target="_blank">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" placeholder="Enter your LNMIIT email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p class="success-message" id="successMsg">Message sent successfully!</p>
+    </form>
+
+    <div class="info">
+      <p>For direct queries, email at: <strong><a href="mailto:rishabhgarg2066@gmail.com">rishabhgarg2066@gmail.com</a></strong></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/rishabh-garg-50075833a" target="_blank">Rishabh Garg</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 LNMIIT Exchange </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successMsg.style.display = 'block';
+      form.reset();
+      setTimeout(() => successMsg.style.display = 'none', 3000);
+    });
+  </script>
+
+</body>
+</html>

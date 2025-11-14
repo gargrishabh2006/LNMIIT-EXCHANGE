@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNMIIT Exchange | Home</title>
+  <link rel="icon" href="https://pbs.twimg.com/profile_images/436987343/upper_logo_400x400.JPG">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f6f8fa;
+      color: #222;
+    }
+
+    header {
+      background-color: #002147; /* LNMIIT Blue */
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #F57C00; /* LNMIIT Orange */
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(0, 33, 71, 0.75), rgba(0, 33, 71, 0.7)),
+                  url('https://lnmiit.ac.in/wp-content/uploads/2023/06/LNMIIT-VIEW.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero a {
+      background-color: #F57C00;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero a:hover {
+      background-color: white;
+      color: #002147;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
+      padding: 70px 60px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      color: #002147;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 60px 40px;
+      background-color: #fff;
+    }
+
+    .cta-section h2 {
+      color: #002147;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .cta-section a {
+      background-color: #002147;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-section a:hover {
+      background-color: #F57C00;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #F57C00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LNMIIT Exchange</h1>
+    <nav>
+      <a href="index.html" >Home</a>
+      <a href="sell.html"  target="_blank">Sell Item</a>
+      <a href="browse.html" target="_blank">Browse Items</a>
+      <a href="about.html" target="_blank">About</a>
+      <a href="contact.html" target="_blank">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to LNMIIT Exchange</h2>
+    <p>A dedicated marketplace for students of LNMIIT to buy, sell or exchange their items within the campus community safely and conveniently.</p>
+    <a href="browse.html" target="_blank"> Explore Items</a>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h3>Post Your Item Easily</h3>
+      <p>Create a listing in minutes—upload an image, set a price, add details—and share it with fellow students.</p>
+    </div>
+    <div class="card">
+      <h3>Discover Great Deals</h3>
+      <p>Browse through items listed by your peers—books, gadgets, cycles and more—all within LNMIIT campus.</p>
+    </div>
+    <div class="card">
+      <h3>Trusted Student-Only Platform</h3>
+      <p>Exclusively for LNMIIT students—helping build a community of trust, reuse, and sustainable sharing.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Start?</h2>
+    <a href="sell.html" target="_blank"> Your Item Now</a>
+  </section>
+
+
+  <footer>
+    <p>© 2025 LNMIIT Exchange | Developed by Rishabh Garg</p>
+    <p>Contact: <a href="mailto:rishabhgarg2066@gmail.com">rishabhgarg2066@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
