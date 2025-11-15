@@ -7,7 +7,6 @@
   <link rel="icon" href="https://pbs.twimg.com/profile_images/436987343/upper_logo_400x400.JPG">
 
   <style>
-    /* Popup Background */
     .popup-bg {
       display: none;
       position: fixed;
@@ -19,7 +18,6 @@
       z-index: 1000;
     }
 
-    /* Popup Box */
     .popup-box {
       background: white;
       padding: 25px;
@@ -41,8 +39,7 @@
       color: #002147;
     }
 
-    .popup-box input,
-    .popup-box textarea {
+    .popup-box input {
       width: 100%;
       padding: 10px;
       border: 1px solid #aaa;
@@ -76,17 +73,8 @@
       cursor: pointer;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #f6f8fa;
-      color: #222;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: #f6f8fa; color: #222; }
 
     header {
       background-color: #002147;
@@ -98,9 +86,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    header h1 {
-      font-size: 24px;
-    }
+    header h1 { font-size: 24px; }
 
     nav a {
       color: white;
@@ -110,15 +96,9 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #F57C00;
-    }
+    nav a:hover { color: #F57C00; }
 
-    .browse-section {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 0 30px;
-    }
+    .browse-section { max-width: 1200px; margin: 50px auto; padding: 0 30px; }
 
     .browse-section h2 {
       text-align: center;
@@ -127,10 +107,7 @@
       font-size: 32px;
     }
 
-    .search-bar {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    .search-bar { text-align: center; margin-bottom: 40px; }
 
     .search-bar input {
       padding: 12px 18px;
@@ -139,11 +116,6 @@
       border-radius: 30px;
       font-size: 16px;
       outline: none;
-      transition: border-color 0.3s;
-    }
-
-    .search-bar input:focus {
-      border-color: #F57C00;
     }
 
     .items-grid {
@@ -165,32 +137,11 @@
       box-shadow: 0 5px 18px rgba(0,0,0,0.15);
     }
 
-    .item-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+    .item-card img { width: 100%; height: 180px; object-fit: cover; }
 
-    .item-details {
-      padding: 18px;
-    }
+    .item-details { padding: 18px; }
 
-    .item-details h3 {
-      color: #002147;
-      margin-bottom: 6px;
-    }
-
-    .item-details p {
-      font-size: 15px;
-      color: #444;
-      margin: 4px 0;
-    }
-
-    .price {
-      color: #F57C00;
-      font-weight: bold;
-      margin-top: 6px;
-    }
+    .price { color: #F57C00; font-weight: bold; margin-top: 6px; }
 
     .contact-btn {
       background-color: #F57C00;
@@ -205,20 +156,12 @@
       border: none;
     }
 
-    .contact-btn:hover {
-      background-color: #002147;
-    }
-
     footer {
       background-color: #002147;
       color: white;
       text-align: center;
       padding: 18px 0;
       margin-top: 60px;
-    }
-
-    footer a {
-      color: #F57C00;
     }
   </style>
 </head>
@@ -240,8 +183,8 @@
       <label>Roll Number</label>
       <input type="text" id="userRoll" placeholder="Enter your roll number">
 
-      <label>Your Query</label>
-      <textarea id="userQuery" rows="4" placeholder="Write your message..."></textarea>
+      <label>Phone Number</label>
+      <input type="text" id="userPhone" placeholder="Enter phone number">
 
       <button class="send-btn" onclick="sendMail()">Send Query</button>
       <button class="close-btn" onclick="closeForm()">Close</button>
@@ -253,10 +196,10 @@
     <h1>LNMIIT Exchange</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="sell.html" >Sell Item</a>
+      <a href="sell.html">Sell Item</a>
       <a href="browse.html">Browse Items</a>
-      <a href="about.html" >About</a>
-      <a href="contact.html" >Contact</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -317,7 +260,6 @@
     <p>© 2025 LNMIIT Exchange</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     let sellerEmail = "";
 
@@ -334,7 +276,7 @@
       const name = document.getElementById("userName").value;
       const email = document.getElementById("userEmail").value;
       const roll = document.getElementById("userRoll").value;
-      const query = document.getElementById("userQuery").value;
+      const phone = document.getElementById("userPhone").value;
 
       if (!email.endsWith("@lnmiit.ac.in")) {
         alert("Please enter your LNMIIT college email id.");
@@ -342,7 +284,8 @@
       }
 
       const mailBody =
-        `Name: ${name}\nEmail: ${email}\nRoll No: ${roll}\n\nQuery:\n${query}`;
+        `Name- ${name}\nRoll.no- ${roll}\nEmail- ${email}\nPhone number- ${phone}\n\n"I am interested in buying this product"`;
+
 
       window.location.href =
         `mailto:${sellerEmail}?subject=Product Inquiry from LNMIIT Exchange&body=${encodeURIComponent(mailBody)}`;
@@ -355,10 +298,10 @@
     const items = Array.from(itemsGrid.children);
 
     searchBox.addEventListener('input', () => {
-      const query = searchBox.value.toLowerCase();
+      const q = searchBox.value.toLowerCase();
       items.forEach(item => {
         const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(query) ? 'block' : 'none';
+        item.style.display = text.includes(q) ? 'block' : 'none';
       });
     });
   </script>
